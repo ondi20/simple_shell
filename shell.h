@@ -1,8 +1,8 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
@@ -13,8 +13,8 @@
 #include <errno.h>
 
 /* for read/write buffers */
-#define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
+#define READ_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
 /* for command chaining */
@@ -179,9 +179,10 @@ int _myexit(info_t *);
 int _mycd(info_t *);
 int _myhelp(info_t *);
 
-/* toem_builtin1.c */
-int _myhistory(info_t *);
-int _myalias(info_t *);
+/* toem_builtin1.c 
+	*int _myhistory(info_t *);
+	*int _myalias(info_t *);
+*/
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
@@ -204,6 +205,10 @@ int populate_env_list(info_t *);
 char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
+
+/*toem_builtin1.c*/
+int _myhistory(info_t *);
+int _myalias(info_t *);
 
 /* toem_history.c */
 char *get_history_file(info_t *info);
